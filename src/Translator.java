@@ -12,14 +12,16 @@ public class Translator {
         //ignoring first line that will always be
         br.readLine();
         bw.write("public class translated {\n");
-        bw.write("\tpublic static void main(String[] args) {\n");
+        bw.write("public static void main(String[] args) {\n");
         bw.flush();
         while ((line = br.readLine()) != null){
-            if(line.substring(1,4).equals("end")){
-                break;
+            String seperate[] = line.split(" ");
+            if(seperate[0].equals("int")){
+                bw.write(line + "\n");
+                bw.flush();
             }
         }
-        bw.write("\t}\n");
+        bw.write("}\n");
         bw.write("}");
         bw.flush();
     }
