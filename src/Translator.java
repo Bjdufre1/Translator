@@ -15,11 +15,22 @@ public class Translator {
         bw.write("public static void main(String[] args) {\n");
         bw.flush();
         while ((line = br.readLine()) != null){
-            String seperate[] = line.split(" ");
-            if(seperate[0].equals("int")){
-                bw.write(line + "\n");
-                bw.flush();
+            if(line.length() > 3) {
+                String beginning = line.substring(0,3);
+                if (beginning.equals("int")) {
+                    bw.write(line + "\n");
+                    bw.flush();
+                }
+                if (beginning.equals("if(")) {
+                    bw.write(line + "\n");
+                    bw.flush();
+                }
+                if(beginning.equals("pnt")){
+                    bw.write("System.out.print(" + line.substring(4, line.length() - 1) + ";\n");
+                    bw.flush();
+                }
             }
+
         }
         bw.write("}\n");
         bw.write("}");
