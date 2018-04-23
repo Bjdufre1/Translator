@@ -15,7 +15,9 @@ public class Translator {
         bw.write("\tpublic static void main(String[] args) {\n");
         bw.flush();
         while ((line = br.readLine()) != null){
-
+            if(line.substring(1,4).equals("end")){
+                break;
+            }
         }
         bw.write("\t}\n");
         bw.write("}");
