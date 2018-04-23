@@ -1,0 +1,9 @@
+beg{
+    int num1 = 5;
+    int num2 = 10;
+    int sum = num1 + num2;
+    pnt(cat("The sum of num1 and num2 is ", sum));
+    if(sum > 20){
+        pnt("The sum is greater than 20");
+    }
+}end
