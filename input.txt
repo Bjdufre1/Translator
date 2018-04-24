@@ -2,12 +2,8 @@ beg{
 int num1 = 5;
 int num2 = 10;
 int sum = num1 + num2;
-dbl ass = 1.0;
-flt dick = 3.01;
-char tit = a;
-boo fuck = true;
-str suck = mother;
-pnt("The sum of num1 and num2 is " @ sum));
-whl(test){test;}
-if(sum > 20){pnt("The sum is greater than 20");}
+pnt("The sum of num1 and num2 is " @ sum);
+if(sum > 20){
+pnt("The sum is greater than 20");
+}
 }end

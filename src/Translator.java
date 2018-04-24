@@ -59,6 +59,15 @@ public class Translator {
                     bw.flush();
                 }
             }
+            else if(line.length() >= 1){
+                char beginning = line.charAt(0);
+                if(beginning == '{'){
+                    bw.write("{\n");
+                }
+                else if(beginning == '}'){
+                    bw.write("}\n");
+                }
+            }
 
         }
         bw.write("}\n");
