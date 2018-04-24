@@ -9,7 +9,7 @@ public class Translator {
         br = new BufferedReader(new FileReader("input.txt"));
         bw = new BufferedWriter(new FileWriter("output.txt"));
         String line = "";
-        //ignoring first line that will always be
+        //ignoring first line that will always be beg{
         br.readLine();
         bw.write("public class translated {\n");
         bw.write("public static void main(String[] args) {\n");
@@ -21,11 +21,40 @@ public class Translator {
                     bw.write(line + "\n");
                     bw.flush();
                 }
+                if(beginning.equals("dbl")){
+                    bw.write("double" + line.substring(3, line.length()) + "\n");
+                    bw.flush();
+                }
+                if(beginning.equals("flt")){
+                    bw.write("float" + line.substring(3, line.length()) + "\n");
+                    bw.flush();
+                }
+                if(beginning.equals("chr")){
+                    bw.write("char" + line.substring(3, line.length()) + "\n");
+                    bw.flush();
+                }
+                if(beginning.equals("boo")){
+                    bw.write("bool" + line.substring(3, line.length()) + "\n");
+                    bw.flush();
+                }
+                if(beginning.equals("str")){
+                    bw.write("String" + line.substring(3, line.length()) + "\n");
+                    bw.flush();
+                }
                 if (beginning.equals("if(")) {
                     bw.write(line + "\n");
                     bw.flush();
                 }
+                if(beginning.equals("for")){
+                    bw.write(line + "\n");
+                    bw.flush();
+                }
+                if(beginning.equals("whl")){
+                    bw.write("while" + line.substring(3,line.length()) + "\n");
+                    bw.flush();
+                }
                 if(beginning.equals("pnt")){
+                    line = line.replaceAll("@","+");
                     bw.write("System.out.print(" + line.substring(4, line.length() - 1) + ";\n");
                     bw.flush();
                 }
