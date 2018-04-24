@@ -7,7 +7,7 @@ System.out.print("The sum of num1 and num2 is " + sum);
 if(sum > 20){
 System.out.print("The sum is greater than 20");
 }
-el{
+else{
 System.out.print("oi");
 }
 }

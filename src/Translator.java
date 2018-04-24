@@ -15,7 +15,7 @@ public class Translator {
         bw.write("public static void main(String[] args) {\n");
         bw.flush();
         while ((line = br.readLine()) != null){
-            if(line.length() > 3) {
+            if(line.length() >= 3) {
                 String beginning = line.substring(0,3);
                 if (beginning.equals("int")) {
                     bw.write(line + "\n");
