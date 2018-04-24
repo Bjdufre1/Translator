@@ -6,4 +6,7 @@ pnt("The sum of num1 and num2 is " @ sum);
 if(sum > 20){
 pnt("The sum is greater than 20");
 }
+el{
+pnt("oi");
+}
 }end

@@ -41,8 +41,16 @@ public class Translator {
                     bw.write("String" + line.substring(3, line.length()) + "\n");
                     bw.flush();
                 }
+                if (beginning.equals("fnl")) {
+                    bw.write("public static" + line.substring(3,line.length()) + "\n");
+                    bw.flush();
+                }
                 if (beginning.equals("if(")) {
                     bw.write(line + "\n");
+                    bw.flush();
+                }
+                if (beginning.equals("el{")) {
+                    bw.write("else{" + "\n");
                     bw.flush();
                 }
                 if(beginning.equals("for")){
@@ -66,6 +74,9 @@ public class Translator {
                 }
                 else if(beginning == '}'){
                     bw.write("}\n");
+                }
+                else{
+                    bw.write(line + "\n");
                 }
             }
 
